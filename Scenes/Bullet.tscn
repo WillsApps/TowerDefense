@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://htk7y2ji784r"]
+
+[ext_resource type="Script" path="res://Scripts/bullet.cs" id="1_h6xwj"]
+[ext_resource type="PackedScene" uid="uid://h731ilh8aj6j" path="res://Raw Resources/Blender/bullet.blend" id="1_lftuj"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4rr7r"]
+
+[node name="Bullet" type="CharacterBody3D"]
+script = ExtResource("1_h6xwj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_4rr7r")
+
+[node name="Bullet" parent="." instance=ExtResource("1_lftuj")]

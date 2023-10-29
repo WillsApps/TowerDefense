@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdd1p6wj8jqtq"]
+
+[ext_resource type="PackedScene" uid="uid://d0wahh7e2otxt" path="res://Scenes/Mob.tscn" id="1_ahy40"]
+[ext_resource type="PackedScene" uid="uid://ca26ahxiq1vpt" path="res://Scenes/PathNode.tscn" id="2_6oksg"]
+[ext_resource type="PackedScene" uid="uid://b2jkcsxx77scb" path="res://Scenes/Tower.tscn" id="3_ssh33"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999655, 0.0258664, -0.0044521, 0, 0.169625, 0.985509, 0.0262467, -0.985169, 0.169566, 0, 8.8978, 0.990005)
+fov = 108.9
+size = 35.0
+
+[node name="Mob" parent="." node_paths=PackedStringArray("PathNodes") instance=ExtResource("1_ahy40")]
+PathNodes = [NodePath("../PathNode"), NodePath("../PathNode2"), NodePath("../PathNode3"), NodePath("../PathNode4")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.976424, -0.206343, 0.0633888, 0, 0.293657, 0.955911, -0.21586, -0.933375, 0.286733, 0, 4.39069, 0)
+
+[node name="PathNode" parent="." instance=ExtResource("2_6oksg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3178, 0, 0)
+
+[node name="PathNode2" parent="." instance=ExtResource("2_6oksg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3482, 0, 0)
+
+[node name="PathNode3" parent="." instance=ExtResource("2_6oksg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.528, -3.8147e-06, -12.0484)
+
+[node name="PathNode4" parent="." instance=ExtResource("2_6oksg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2523, 0, -7.78921)
+
+[node name="Tower" parent="." instance=ExtResource("3_ssh33")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4232, 0, -5.21024)

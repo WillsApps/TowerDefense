@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2jkcsxx77scb"]
+
+[ext_resource type="Script" path="res://Scripts/Tower.cs" id="1_3043r"]
+[ext_resource type="PackedScene" uid="uid://c674xh5eekaam" path="res://Raw Resources/Blender/tower.blend" id="2_re7xl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ylrdx"]
+
+[node name="Tower" type="Area3D"]
+script = ExtResource("1_3043r")
+
+[node name="tower" parent="." instance=ExtResource("2_re7xl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_ylrdx")
+
+[node name="ShootTimer" type="Timer" parent="."]
